@@ -40,6 +40,9 @@ If you don't want to use the host network, then you can configure docker like th
 <details><summary>(Click to expand)</summary>
 <p>
 
+!> Screego may not work correctly when deploying it in docker without `network_mode: host`.
+   See [#226](https://github.com/screego/server/issues/226)
+
 ```bash
 $ docker run -it \
     -e SCREEGO_EXTERNAL_IP=EXTERNALIP \
