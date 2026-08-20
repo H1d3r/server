@@ -62,11 +62,7 @@ const hostSession = async ({
 
     peer.onconnectionstatechange = (event) => {
         console.log('host change', event);
-        if (
-            peer.connectionState === 'closed' ||
-            peer.connectionState === 'disconnected' ||
-            peer.connectionState === 'failed'
-        ) {
+        if (peer.connectionState === 'closed' || peer.connectionState === 'failed') {
             peer.close();
             done();
         }
@@ -134,11 +130,7 @@ const clientSession = async ({
     };
     peer.onconnectionstatechange = (event) => {
         console.log('client change', event);
-        if (
-            peer.connectionState === 'closed' ||
-            peer.connectionState === 'disconnected' ||
-            peer.connectionState === 'failed'
-        ) {
+        if (peer.connectionState === 'closed' || peer.connectionState === 'failed') {
             peer.close();
             done();
         }
